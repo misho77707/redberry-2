@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Personalinfo.css" />
+</head>
+<body>
+    <div id="Hdr1">ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ</div>
+    <div id="Hdr2">1/3</div>
+    <div id="line1"></div>
+    <a href="index.html"><div id="HomeBtn"><img src="./images/BackBtn.png"></div></a>
+    
+    
+    <div id="ClientRez">
+        <div id="ClientName"></div>
+        <div id="ClientPhoto"></div>
+        <div id="At_img">
+            <img  src="images/at.png">
+        </div>
+        <div id="ClientEmail">anzorr666@gmail.com</div>
+
+        <div id="Phone_img">
+        <img src="images/phone.png">
+        </div>
+        <div id="ClientPhone">
+            +995 597 63 45 16
+        </div>
+        <div id="ClientAbt">
+            ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ
+        </div>
+        <div id="ClientAbout">
+            ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ 
+ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ. 
+        </div>
+    </div>
+    
+    
+    <img id="star" src="/images/star.png" alt="">
+    <div id="saxgvar">
+    <div class="Name">
+        <div class="NameN">სახელი</div>
+        <div>
+            <input onkeyup="UpdName()" type="text" id="NInp" class="NameInp">
+        </div>
+        <div class="Vld">მინიმუმ 2 ასო, ქართული ასოები</div>
+    </div>
+
+    <div class="Name">
+        <div class="NameN">გვარი</div>
+        <div>
+            <input onkeyup="UpdSName()" type="text" id="SNInp" class="NameInp">
+        </div>
+        <div class="Vld">მინიმუმ 2 ასო, ქართული ასოები</div>
+    </div>
+</div>
+<div id="Foto"><b>პირადი ფოტოს ატვირთვა</b></div>
+<!-- <button id="FotoBtn">ატვირთვა</button> -->
+<label id="FotoBtn" for="image_input"> ატვირთვა</label>
+<input  id="image_input" type="file" accept="image/jpeg, image/png, image/jpg" style="visibility: hidden;">
+<div id="About"><b>ჩემ შესახებ (არასავალდებულო)</b>
+<textarea id="AboutInp" type="text"></textarea>
+    </div>
+    <div id="Email">
+        <div class="NameN">ელ.ფოსტა</div>
+        <input id="EInpt">
+        <div class="Vld">უნდა მთავრდებოდეს @redberry.ge-ით</div>
+    </div>
+    <div id="Num">
+        <div class="NameN">მობილურის ნომერი</div>
+        <input id="EInpt">
+        <div class="Vld">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</div>
+    </div>
+    <a href="Experience.html"><button onclick="locfun()" id="NextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button></a>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Education.css" />
+</head>
+<body>
+    <a href="index.html"><div id="HomeBtn"><img src="./images/backBtn.png"></div></a>
+    <div id="ClientRez">
+    </div><img id="star" src="/images/star.png" alt="">
+    <div id="Hdr1">განათლება</div>
+    <div id="Hdr2">3/3</div>
+    <div id="line1"></div>
+    <div id="Edc">
+        <div class="NameN">თანამდებობა</div>
+        <input class="LInpt">
+        <div class="Vld">მინიმუმ 2 სიმბოლო</div>
+    </div>
+    <div id="Degree">
+        <div class="NameN">ხარისხი</div>
+        <select id="Selector">
+            <option>Please select</option> 
+
+        </select>
+    </div>
+    <div></div>
+    <div id="EndD">
+        <div class="NameN">დამთავრების რიცხვი</div>
+        <input class="DateInp" type="date">
+    </div>
+    <div id="Descr">
+        <div class="NameN">აღწერა</div>
+        <textarea id="DescrText"></textarea>
+    </div>
+    <div id="line2"></div>
+    <button id="MoreBtn">სხვა სასწავლებლის დამატება</button>
+    <a href="/Experience.html"><button id="BackBtn">ᲣᲙᲐᲜ</button></a>
+    <a href=""><button id="NextBtn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button></a>
+
+    <script>
+        const api="https://resume.redberryinternship.ge/api/degrees";
+       async function getapi(url) {
+// Storing response
+const response = await fetch(url);
+
+// Storing data in form of JSON
+var data = await response.json();
+
+for(let i in data){
+    document.getElementById('Selector').innerHTML+=`<option value="${data[i].title}">${data[i].title}</option>`
+}
+
+}
+// Calling that async function
+getapi(api);
+    </script>
+</body>
+</html>

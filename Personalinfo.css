@@ -1,0 +1,413 @@
+body{
+    background: #F9F9F9;
+}
+  input {
+    padding: 12px 20px;
+    box-sizing: border-box;
+  }
+  textarea{
+    padding: 12px 20px;
+  box-sizing: border-box;
+  font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 21px;
+
+  }
+#line1{
+    position: absolute;
+width: 798px;
+height: 0px;
+left: 150px;
+top: 88px;
+
+/* off black */
+
+border: 1px solid #1A1A1A;
+}
+#Hdr1{
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    left: 149px;
+    top: 47px;
+
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    /* off black */
+
+    color: #1A1A1A;
+}
+#Hdr2{
+    position: absolute;
+width: 29px;
+height: 24px;
+left: 920px;
+top: 49px;
+
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+/* identical to box height */
+
+/* off black */
+
+color: #1A1A1A;
+}
+#HomeBtn{
+    position: absolute;
+width: 40px;
+height: 40px;
+left: 48px;
+top: 45px;
+border-radius: 20px;
+
+background: #FFFFFF;
+}
+#HomeBtn img{
+    position: absolute;
+    height: 16px;
+    width: 9.17px;
+    left: 14px;
+    top:12px
+}
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url(fonts/HelveticaNeue-01.ttf);
+}
+#ClientRez{
+    position: absolute;
+    width: 822px;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    
+    background: #FFFFFF;
+    
+}
+.Name{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+    gap: 8px;
+
+    position: relative;
+    width: 419px;
+    height: 122px;
+    left: calc(50% - 419px/2 - 624.5px);
+    top: 10px;
+}
+.NameInp{
+    box-sizing: border-box;
+
+    width: 371px;
+    height: 48px;
+
+    background: #FFFFFF;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+
+/* Inside auto layout */
+
+}
+.NameN{
+   
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 16px;
+    line-height: 21px;
+   
+
+    color: #000000;
+}
+.Vld{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+}
+#saxgvar{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 24px;
+    gap: 8px;
+    
+    position: absolute;
+    width: 419px;
+    height: 122px;
+    left: 38%;
+    top: 157px;
+}
+#Foto{
+    position: absolute;
+    width: 232px;
+    height: 22px;
+    left: 150px;
+    top: 325px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+/* off black */
+
+color: #1A1A1A;
+}
+#FotoBtn{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 10px;
+
+position: absolute;
+width: 107px;
+height: 27px;
+left: 401px;
+top: 325px;
+
+
+background: #0E80BF;
+border-radius: 4px;
+
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+border-style: none;
+color: #FFFFFF;
+cursor: pointer;
+}
+#About{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+    gap: 8px;
+    
+    position: absolute;
+    width: 846px;
+    height: 148px;
+    left: calc(50% - 846px/2 - 411px);
+    top: 393px;
+}
+#AboutInp{
+    width: 798px;
+height: 103px;
+
+background: #FFFFFF;
+border: 1px solid #BCBCBC;
+border-radius: 4px;
+}
+
+#Email{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 24px;
+gap: 8px;
+
+position: absolute;
+width: 846px;
+height: 122px;
+left: calc(50% - 846px/2 - 411px);
+top: 558px;
+}
+#EInpt{
+    box-sizing: border-box;
+
+width: 798px;
+height: 48px;
+
+background: #FFFFFF;
+border: 1px solid #BCBCBC;
+border-radius: 4px;
+
+}
+#Num{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 24px;
+gap: 8px;
+
+position: absolute;
+width: 846px;
+height: 122px;
+left: calc(50% - 846px/2 - 411px);
+top: 693px;
+}
+#NextBtn{
+    display: flex;
+flex-direction: row;
+align-items: center;
+padding: 18px 60px;
+gap: 20px;
+
+position: absolute;
+width: 151px;
+height: 48px;
+right: 972px;
+bottom: 65px;
+
+background: #6B40E3;
+border-radius: 4px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+letter-spacing: 0.08em;
+
+color: #FFFFFF;
+border-style: none;
+justify-content: center;
+cursor: pointer;
+}
+#star{
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 1176px;
+    bottom: 44px;
+}
+#ClientName{
+    position: absolute;
+width: 400px;
+height: 42px;
+left: 80px;
+top: 68px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 34px;
+line-height: 42px;
+/* identical to box height */
+
+
+color: #F93B1D;
+}
+#ClientPhoto{
+    position: absolute;
+width: 246px;
+height: 246px;
+left: 501px;
+top: 48px;
+
+background: url(.jpg), #D9D9D9;
+border-radius: 133px;
+}
+#At_img{
+    position: absolute;
+    left: 80px;
+    top:130px;
+}
+#At_img img{
+    height: 16.666664123535156px;
+width: 16.666664123535156px;
+left: 1.66668701171875px;
+top: 1.666748046875px;
+border-radius: 0px;
+
+}
+#Phone_img{
+ position: absolute;
+ top: 158px;
+ left:80px;
+}
+#Phone_img img{
+    height: 16.641902923583984px;
+width: 16.63849449157715px;
+left: 1.55352783203125px;
+top: 1.8046875px;
+border-radius: 0px;
+
+}
+#ClientEmail{
+    position: absolute;
+width: 179px;
+height: 21px;
+left: 111px;
+top: 130px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+
+/* off black */
+
+color: #1A1A1A;
+}
+#ClientPhone{
+    position: absolute;
+width: 151px;
+height: 21px;
+left: 111px;
+top: 158px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+
+/* off black */
+
+color: #1A1A1A;
+}
+#ClientAbt{
+    position: absolute;
+width: 118px;
+height: 22px;
+left: 80px;
+top: 213px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #F93B1D;
+}
+#ClientAbout{
+    position: absolute;
+width: 432px;
+height: 72px;
+left: 80px;
+top: 250px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+/* or 138% */
+
+text-transform: lowercase;
+
+color: #000000;
+}
