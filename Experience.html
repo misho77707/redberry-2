@@ -10,36 +10,78 @@
 <body>
     <a href="index.html"><div id="HomeBtn"><img src="./images/backBtn.png"></div></a>
     <div id="ClientRez">
-        <div></div>
+        <div id="ClientName"></div>
+        <div id="ClientPhoto">
+            
+        </div>
+        <div id="At_img">
+            <img  src="images/at.png">
+        </div>
+        <div id="ClientEmail"></div>
+
+        <div id="Phone_img">
+        <img src="images/phone.png">
+        </div>
+        <div id="ClientPhone">
+            
+        </div>
+        <div id="ClientAbt">
+            ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ
+        </div>
+        <div id="ClientAbout">
+        </div>
+        <div id="Exp_Edc">
+            <div id="ClientExp">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
+            <div id="ClientPosition"></div>
+            <div id="ClientDates"></div>
+            <div id="ClientDescr"></div>
+        </div>
+        
     </div><img id="star" src="/images/star.png" alt="">
     <div id="Hdr1">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
     <div id="Hdr2">2/3</div>
     <div id="line1"></div>
+
+<div id="mainDiv">
     <div id="Position">
         <div class="NameN">თანამდებობა</div>
-        <input class="LInpt">
+        <input onkeyup="UpdPos()" class="LInpt">
         <div class="Vld">მინიმუმ 2 სიმბოლო</div>
     </div>
+
     <div id="Damsaq">
         <div class="NameN">დამსაქმებელი</div>
-        <input class="LInpt">
+        <input onkeyup="UpdPos()" class="LInpt">
         <div class="Vld">მინიმუმ 2 სიმბოლო</div>
     </div>
-    <div id="StartD">
-        <div class="NameN">დაწყების რიცხვი</div>
-        <input class="DateInp" type="date">
+
+    <div id="DateDiv">
+            <div id="StartD">
+                <div class="NameN">დაწყების რიცხვი</div>
+                <input onchange="UpdDate()" class="DateInp" type="date">
+            </div>
+
+            <div id="EndD">
+                <div class="NameN">დამთავრების რიცხვი</div>
+                <input onchange="UpdDate()" class="DateInp" type="date">
+            </div>
     </div>
-    <div id="EndD">
-        <div class="NameN">დამთავრების რიცხვი</div>
-        <input class="DateInp" type="date">
-    </div>
+
+
     <div id="Descr">
         <div class="NameN">აღწერა</div>
-        <textarea id="DescrText"></textarea>
+        <textarea onkeyup="UpdDescr()" id="DescrText"></textarea>
     </div>
     <div id="line2"></div>
-    <button id="MoreBtn">მეტი გამოცდილების დამატება</button>
+</div>
+    
+<div>
+    
+    <button onclick="More()" id="MoreBtn">მეტი გამოცდილების დამატება</button>
     <a href="/Personalinfo.html"><button id="BackBtn">ᲣᲙᲐᲜ</button></a>
     <a href="Education.html"><button id="NextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button></a>
+</div>
+    <script src="Experience.js"></script>
+    
 </body>
 </html>

@@ -20,7 +20,9 @@
         <div id="At_img">
             <img  src="images/at.png">
         </div>
-        <div id="ClientEmail">anzorr666@gmail.com</div>
+        <div id="ClientEmail">
+           
+        </div>
 
         <div id="Phone_img">
         <img src="images/phone.png">
@@ -32,8 +34,7 @@
             ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ
         </div>
         <div id="ClientAbout">
-            ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ 
-ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ. 
+            
         </div>
     </div>
     
@@ -61,19 +62,19 @@
 <label id="FotoBtn" for="image_input"> ატვირთვა</label>
 <input  id="image_input" type="file" accept="image/jpeg, image/png, image/jpg" style="visibility: hidden;">
 <div id="About"><b>ჩემ შესახებ (არასავალდებულო)</b>
-<textarea id="AboutInp" type="text"></textarea>
+<textarea onkeyup="UpdAbout()" id="AboutInp" type="text"></textarea>
     </div>
     <div id="Email">
         <div class="NameN">ელ.ფოსტა</div>
-        <input id="EInpt">
+        <input onkeyup="UpdEmail()" id="EInpt">
         <div class="Vld">უნდა მთავრდებოდეს @redberry.ge-ით</div>
     </div>
     <div id="Num">
         <div class="NameN">მობილურის ნომერი</div>
-        <input id="EInpt">
+        <input onkeyup="UpdPhone()" id="MInpt">
         <div class="Vld">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</div>
     </div>
-    <a href="Experience.html"><button onclick="locfun()" id="NextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button></a>
+    <a href="Experience.html"><button id="NextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button></a>
 
     <script src="script.js"></script>
 </body>
