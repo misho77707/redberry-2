@@ -31,13 +31,18 @@
         <div id="ClientAbout">
         </div>
         <div id="Exp_Edc">
-            <div id="ClientExp">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
-            <div id="ClientPosition"></div>
-            <div id="ClientDates"></div>
-            <div id="ClientDescr"></div>
+            <div class=ClientExpDivs>
+                <div class="ClientExp">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
+                <div class="ClientPosition"></div>
+                <div class="ClientDates"></div>
+                <div class="ClientDescr"></div>
+            </div>
+            
+             
         </div>
-        
-    </div><img id="star" src="/images/star.png" alt="">
+       
+    </div>
+    
     <div id="Hdr1">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
     <div id="Hdr2">2/3</div>
     <div id="line1"></div>
@@ -45,37 +50,37 @@
 <div id="mainDiv">
     <div id="Position">
         <div class="NameN">თანამდებობა</div>
-        <input onkeyup="UpdPos()" class="LInpt">
+        <input onkeyup="UpdPos(0)" class="LInpt1">
         <div class="Vld">მინიმუმ 2 სიმბოლო</div>
     </div>
 
     <div id="Damsaq">
         <div class="NameN">დამსაქმებელი</div>
-        <input onkeyup="UpdPos()" class="LInpt">
+        <input onkeyup="UpdPos(0)" class="LInpt2">
         <div class="Vld">მინიმუმ 2 სიმბოლო</div>
     </div>
 
     <div id="DateDiv">
             <div id="StartD">
                 <div class="NameN">დაწყების რიცხვი</div>
-                <input onchange="UpdDate()" class="DateInp" type="date">
+                <input onchange="UpdDate(0)" class="DateInp1" type="date">
             </div>
 
             <div id="EndD">
                 <div class="NameN">დამთავრების რიცხვი</div>
-                <input onchange="UpdDate()" class="DateInp" type="date">
+                <input onchange="UpdDate(0)" class="DateInp2" type="date">
             </div>
     </div>
 
 
     <div id="Descr">
         <div class="NameN">აღწერა</div>
-        <textarea onkeyup="UpdDescr()" id="DescrText"></textarea>
+        <textarea onkeyup="UpdDescr(0)" class="DescrText"></textarea>
     </div>
     <div id="line2"></div>
 </div>
     
-<div>
+<div class="BtnsDiv">
     
     <button onclick="More()" id="MoreBtn">მეტი გამოცდილების დამატება</button>
     <a href="/Personalinfo.html"><button id="BackBtn">ᲣᲙᲐᲜ</button></a>

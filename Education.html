@@ -6,41 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="Education.css" />
+    
 </head>
 <body>
     <a href="index.html"><div id="HomeBtn"><img src="./images/backBtn.png"></div></a>
     <div id="ClientRez">
-    </div><img id="star" src="/images/star.png" alt="">
+       
+        <div id="ClientName">asda</div>
+        <div id="ClientPhoto">
+            
+        </div>
+        <div id="At_img">
+            <img  src="images/at.png">
+        </div>
+        <div id="ClientEmail"></div>
+
+        <div id="Phone_img">
+        <img src="images/phone.png">
+        </div>
+        <div id="ClientPhone">
+            
+        </div>
+        <div id="ClientAbt">
+            ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ
+        </div>
+        <div id="ClientAbout">
+        </div>
+        <div id="Exp_Edc">
+            <div class=ClientExpDivs>
+                <div class="ClientExp">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
+                <div class="ClientPosition"></div>
+                <div class="ClientDates"></div>
+                <div class="ClientDescr"></div>
+                
+            </div>
+            <script src="LoadData.js"></script>
+            <div class="ClientEdcDiv">
+                <div class="ClientExp">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</div>
+                <div class="ClientSchool"></div>
+                <div class="ClientEDate"></div>
+                <div class="ClientEDescr"></div>
+            </div>
+       
+       
+        </div>
+        
+    </div>
+        
     <div id="Hdr1">განათლება</div>
     <div id="Hdr2">3/3</div>
     <div id="line1"></div>
-    <div id="Edc">
-        <div class="NameN">თანამდებობა</div>
-        <input class="LInpt">
-        <div class="Vld">მინიმუმ 2 სიმბოლო</div>
+
+    <div id="mainDiv">
+    <div class="Edc">
+        <div class="NameN">სასწავლებელი</div>
+        <input onkeyup="UpdSchool(0)" class="LInpt1">
+        <div  class="Vld">მინიმუმ 2 სიმბოლო</div>
     </div>
-    <div id="Degree">
-        <div class="NameN">ხარისხი</div>
-        <select id="Selector">
+    <div class="Degree_EndD">
+    <div class="Degree">
+        <div  class="NameN">ხარისხი</div>
+        <select onchange="UpdSchool1(0)" class="Selector">
             <option>Please select</option> 
 
         </select>
+        </div>
+        <div class="EndD">
+            <div class="NameN">დამთავრების რიცხვი</div>
+            <input class="DateInp" onchange="UpdDate(0)" type="date">
+        </div>
     </div>
-    <div></div>
-    <div id="EndD">
-        <div class="NameN">დამთავრების რიცხვი</div>
-        <input class="DateInp" type="date">
-    </div>
-    <div id="Descr">
+    <div class="Descr">
         <div class="NameN">აღწერა</div>
-        <textarea id="DescrText"></textarea>
+        <textarea onkeyup="UpdDescr(0)" class="DescrText"></textarea>
     </div>
-    <div id="line2"></div>
-    <button id="MoreBtn">სხვა სასწავლებლის დამატება</button>
-    <a href="/Experience.html"><button id="BackBtn">ᲣᲙᲐᲜ</button></a>
-    <a href=""><button id="NextBtn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button></a>
+    <div class="line2"></div>
+
+    </div>
+
+            <div>
+
+                <div class="BtnsDiv">
+    
+                    <button  onclick="More();ragac()" id="MoreBtn">სხვა სასწავლებლის დამატება</button>
+                    <a href="/Experience.html"><button id="BackBtn">ᲣᲙᲐᲜ</button></a>
+                    <a href=""><button id="NextBtn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button></a>
+                </div>
+            </div>
 
     <script>
+        function ragac(){
         const api="https://resume.redberryinternship.ge/api/degrees";
        async function getapi(url) {
 // Storing response
@@ -49,13 +104,35 @@ const response = await fetch(url);
 // Storing data in form of JSON
 var data = await response.json();
 
-for(let i in data){
-    document.getElementById('Selector').innerHTML+=`<option value="${data[i].title}">${data[i].title}</option>`
+
+
+    for(let i in data){
+
+    for(let j=0;j<document.getElementsByClassName('Selector').length;j++ ){
+        document.getElementsByClassName('Selector')[j].innerHTML+=`<option value="${data[i].title}">${data[i].title}</option>`}
+
+        if(localStorage.getItem('DegT')){   
+        savedDeg=JSON.parse(localStorage.getItem('DegT'))
+        for(let j=0;j<savedDeg.length;j++){
+            const a=document.getElementsByClassName('LInpt1')[j].value;
+            
+
+            document.getElementsByClassName('ClientSchool')[j].innerHTML=a+', '+savedDeg[j];
+        document.getElementsByClassName('Selector')[j].value=savedDeg[j];
+        
+    }
+    }
 }
 
 }
 // Calling that async function
-getapi(api);
+getapi(api);}
+ragac();
+    </script>
+    <script src="Education.js"></script>
+    <script> document.getElementById('Exp_Edc').innerHTML+=`<img id="star" src="/images/star.png" alt="">`
+    document.getElementById('ClientRez').style.height=500+document.getElementById('Exp_Edc').offsetHeight+'px';
+    // console.log(document.getElementById('Exp_Edc').offsetHeight)
     </script>
 </body>
 </html>
