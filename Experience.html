@@ -36,6 +36,7 @@
                 <div class="ClientPosition"></div>
                 <div class="ClientDates"></div>
                 <div class="ClientDescr"></div>
+                <div class="line3"></div>
             </div>
             
              
@@ -50,42 +51,50 @@
 <div id="mainDiv">
     <div id="Position">
         <div class="NameN">თანამდებობა</div>
-        <input onkeyup="UpdPos(0)" class="LInpt1">
+        <div class="NameGrd">
+        <input onkeyup="UpdPos(0);PosVal(0)" class="LInpt1">
+        <img class="ErrImg1" src="images/Vector.png">
+        </div>
         <div class="Vld">მინიმუმ 2 სიმბოლო</div>
     </div>
 
     <div id="Damsaq">
         <div class="NameN">დამსაქმებელი</div>
-        <input onkeyup="UpdPos(0)" class="LInpt2">
+        <div class="NameGrd">
+            <input onkeyup="UpdPos(0);DamVal(0)" class="LInpt2">
+            <img class="ErrImg2" src="images/Vector.png">
+        </div>
         <div class="Vld">მინიმუმ 2 სიმბოლო</div>
+        
     </div>
 
     <div id="DateDiv">
             <div id="StartD">
                 <div class="NameN">დაწყების რიცხვი</div>
-                <input onchange="UpdDate(0)" class="DateInp1" type="date">
+                <input onchange="UpdDate(0);DateVal1(0)" class="DateInp1" type="date">
             </div>
 
             <div id="EndD">
                 <div class="NameN">დამთავრების რიცხვი</div>
-                <input onchange="UpdDate(0)" class="DateInp2" type="date">
+                <input onchange="UpdDate(0);DateVal2(0)" class="DateInp2" type="date">
             </div>
     </div>
 
 
     <div id="Descr">
         <div class="NameN">აღწერა</div>
-        <textarea onkeyup="UpdDescr(0)" class="DescrText"></textarea>
+        <textarea onkeyup="UpdDescr(0);DescrVal(0)" class="DescrText"></textarea>
     </div>
     <div id="line2"></div>
 </div>
     
 <div class="BtnsDiv">
     
-    <button onclick="More()" id="MoreBtn">მეტი გამოცდილების დამატება</button>
+    <button onclick="More();" id="MoreBtn">მეტი გამოცდილების დამატება</button>
     <a href="/Personalinfo.html"><button id="BackBtn">ᲣᲙᲐᲜ</button></a>
-    <a href="Education.html"><button id="NextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button></a>
+    <button onclick="ValAll()" id="NextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button>
 </div>
+    <script src="ExperienceVal.js"></script>
     <script src="Experience.js"></script>
     
 </body>

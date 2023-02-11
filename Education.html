@@ -38,6 +38,7 @@
                 <div class="ClientPosition"></div>
                 <div class="ClientDates"></div>
                 <div class="ClientDescr"></div>
+                <div class="line3"></div>
                 
             </div>
             <script src="LoadData.js"></script>
@@ -46,6 +47,7 @@
                 <div class="ClientSchool"></div>
                 <div class="ClientEDate"></div>
                 <div class="ClientEDescr"></div>
+                <div class="line3"></div>
             </div>
        
        
@@ -60,25 +62,28 @@
     <div id="mainDiv">
     <div class="Edc">
         <div class="NameN">სასწავლებელი</div>
-        <input onkeyup="UpdSchool(0)" class="LInpt1">
+            <div class="NameGrd">
+            <input onkeyup="UpdSchool(0);EdcVal(0)" class="LInpt1">
+            <img class="ErrImg1" src="images/Vector.png">
+            </div>
         <div  class="Vld">მინიმუმ 2 სიმბოლო</div>
     </div>
     <div class="Degree_EndD">
     <div class="Degree">
         <div  class="NameN">ხარისხი</div>
-        <select onchange="UpdSchool1(0)" class="Selector">
-            <option>Please select</option> 
+        <select aria-placeholder="აირჩიეთ ხარისხი" onchange="UpdSchool1(0);SelVal(0)" class="Selector">
+            <option>აირჩიეთ ხარისხი</option> 
 
         </select>
         </div>
         <div class="EndD">
             <div class="NameN">დამთავრების რიცხვი</div>
-            <input class="DateInp" onchange="UpdDate(0)" type="date">
+            <input class="DateInp" onchange="UpdDate(0);DateVal(0)" type="date">
         </div>
     </div>
     <div class="Descr">
         <div class="NameN">აღწერა</div>
-        <textarea onkeyup="UpdDescr(0)" class="DescrText"></textarea>
+        <textarea onkeyup="UpdDescr(0);DescrVal(0)" class="DescrText"></textarea>
     </div>
     <div class="line2"></div>
 
@@ -90,7 +95,7 @@
     
                     <button  onclick="More();ragac()" id="MoreBtn">სხვა სასწავლებლის დამატება</button>
                     <a href="/Experience.html"><button id="BackBtn">ᲣᲙᲐᲜ</button></a>
-                    <a href=""><button id="NextBtn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button></a>
+                    <button onclick="SelVal(0)" id="NextBtn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button>
                 </div>
             </div>
 
@@ -130,6 +135,7 @@ getapi(api);}
 ragac();
     </script>
     <script src="Education.js"></script>
+    <script src="EducationVal.js"></script>
     <script> document.getElementById('Exp_Edc').innerHTML+=`<img id="star" src="/images/star.png" alt="">`
     document.getElementById('ClientRez').style.height=500+document.getElementById('Exp_Edc').offsetHeight+'px';
     // console.log(document.getElementById('Exp_Edc').offsetHeight)

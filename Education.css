@@ -526,10 +526,17 @@ border-radius: 0px;
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
+    margin-top: 26px;
     /* identical to box height */
 
     
     color: #F93B1D;
+}
+.line3{
+    width: 662px;
+    height: 0px;
+    border: 1px solid #C8C8C8;
+    margin-top: 32px;
 }
 .ClientDates, .ClientEDate{
     font-family: 'Helvetica Neue';
@@ -554,7 +561,7 @@ word-break:break-all;
 color: #000000;
 margin-top: 16px;
 }
-.Cline2{
+/* .Cline2{
     opacity: 1;
     position: absolute;
     width: 662px;
@@ -562,7 +569,7 @@ margin-top: 16px;
     border: 1px solid #C8C8C8;
    
     
-}
+} */
 .ClientExpDivs{
     display: grid;
     margin-top: 22px;
@@ -578,4 +585,13 @@ margin-top: 16px;
  left: 80px;
  width:658px;
  margin:0%;
+}
+.NameGrd{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.ErrImg1{
+    margin-left: 10px;
+    visibility: hidden;
 }

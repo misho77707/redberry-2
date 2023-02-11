@@ -11,7 +11,7 @@ for(let i=0;i<savedPos.length-1;i++){
    <div class="ClientPosition"></div>
    <div class="ClientDates"></div>
    <div class="ClientDescr"></div>
-   <div class=Cline2></div>
+   <div class='line3'></div>
    </div>
    `;
 }

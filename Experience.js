@@ -3,7 +3,7 @@ document.getElementById('ClientEmail').innerHTML=localStorage.getItem("Email");
 document.getElementById('ClientEmail').innerHTML=localStorage.getItem("Email");
 document.getElementById('ClientPhone').innerHTML=localStorage.getItem("Mobile");
 document.getElementById('ClientAbout').innerHTML=`<p>${localStorage.getItem("About")}</p>
-<div id='Cline'></div>`;
+<div class='line3'></div>`;
 document.getElementById("ClientPhoto").style.backgroundImage =localStorage.getItem("Photo")
 
 
@@ -29,10 +29,36 @@ savedE=JSON.parse(localStorage.getItem('ET'));
 savedD=JSON.parse(localStorage.getItem('DeT'));
 
 
+maxS=Math.max(savedPos.length, savedDam.length, savedS.length, savedE.length, savedD.length);
+
+for(let i = 0; i <maxS; i++){
+    console.log(savedPos.length,maxS);
+    maxS=Math.max(savedPos.length, savedDam.length, savedS.length, savedE.length, savedD.length);
+    if((savedPos[i] == "" || savedPos[i] == null||savedPos[i] == undefined)
+    && (savedDam[i] == "" || savedDam[i] == null||savedDam[i] == undefined)
+    &&   (savedS[i] == "" || savedS[i] == null||savedS[i] == undefined)
+    &&   (savedE[i] == "" || savedE[i] == null||savedE[i] == undefined)
+    &&   (savedD[i] == "" || savedD[i] == null||savedD[i] == undefined)){
+        savedPos.splice(i,1);
+        savedDam.splice(i,1);
+        savedS.splice(i,1);
+        savedE.splice(i,1);
+        savedD.splice(i,1);
+        i--;
+    }
+     
+
+}
+localStorage.setItem('PT',JSON.stringify(savedPos));
+localStorage.setItem('DT',JSON.stringify(savedDam));
+localStorage.setItem('ST',JSON.stringify(savedS));
+localStorage.setItem('ET',JSON.stringify(savedE));
+localStorage.setItem('DeT',JSON.stringify(savedD));
 
 
 
-for(let i=0;i<savedPos.length-1;i++){More1(i+1);k+=1;}
+
+for(let i=0;i<maxS-1;i++){More1(i+1);k+=1;}
 
 
 for(let i=0;i<savedPos.length;i++){
@@ -55,6 +81,7 @@ Edata[i]=savedE[i];
 Descrdata[i]=savedD[i];
 
 }
+
 
 
 
@@ -100,24 +127,30 @@ function More(){
     document.getElementById("mainDiv").innerHTML+=`
     <div id="Position">
     <div class="NameN">თანამდებობა</div>
-    <input onkeyup="UpdPos(${k})" class="LInpt1">
+    <div class="NameGrd">
+        <input onkeyup="UpdPos(${k});PosVal(${k})" class="LInpt1">
+        <img class="ErrImg1" src="images/Vector.png">
+        </div>
     <div class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 
 <div id="Damsaq">
     <div class="NameN">დამსაქმებელი</div>
-    <input onkeyup="UpdPos(${k})" class="LInpt2">
+    <div class="NameGrd">
+            <input onkeyup="UpdPos(${k});DamVal(${k})" class="LInpt2">
+            <img class="ErrImg2" src="images/Vector.png">
+        </div>
     <div class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 <div id="DateDiv">
         <div id="StartD">
             <div class="NameN">დაწყების რიცხვი</div>
-            <input onchange="UpdDate(${k})" class="DateInp1" type="date">
+            <input onchange="UpdDate(${k});DateVal1(${k})" class="DateInp1" type="date">
         </div>
 
         <div id="EndD">
             <div class="NameN">დამთავრების რიცხვი</div>
-            <input onchange="UpdDate(${k})" class="DateInp2" type="date">
+            <input onchange="UpdDate(${k});DateVal2(${k})" class="DateInp2" type="date">
         </div>
 </div>
 
@@ -129,56 +162,73 @@ function More(){
 <div id="line2"></div>
    `;
 
-   document.getElementById("Exp_Edc").innerHTML+=`
-   <div class=ClientExpDivs>
+   document.getElementsByClassName("ClientExpDivs")[0].innerHTML+=`
    <div class="ClientExp">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
    <div class="ClientPosition"></div>
    <div class="ClientDates"></div>
    <div class="ClientDescr"></div>
-   </div>
+   <div class="line3"></div>
    `;
+   console.log(document.getElementsByClassName('LInpt1').length);
+   for(let j=0;j<document.getElementsByClassName('LInpt1').length-1;j++){
+    
+    if(Posdata[j]!=undefined)document.getElementsByClassName('LInpt1')[j].value=Posdata[j];
+    if(Damdata[j]!=undefined)document.getElementsByClassName('LInpt2')[j].value=Damdata[j];
+    if(Sdata[j]!=undefined)document.getElementsByClassName('DateInp1')[j].value=Sdata[j];
+    if(Edata[j]!=undefined)document.getElementsByClassName('DateInp2')[j].value=Edata[j];
+    if(Descrdata[j]!=undefined)document.getElementsByClassName('DescrText')[j].value=Descrdata[j];
+}
+
+   
    
 };
 function More1(n){
     
-    
     document.getElementById("mainDiv").innerHTML+=`
     <div id="Position">
     <div class="NameN">თანამდებობა</div>
-    <input onkeyup="UpdPos(${Number(n)})" class="LInpt1">
+    <div class="NameGrd">
+        <input onkeyup="UpdPos(${Number(n)});PosVal(${Number(n)})" class="LInpt1">
+        <img class="ErrImg1" src="images/Vector.png">
+        </div>
+    
     <div class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 
 <div id="Damsaq">
     <div class="NameN">დამსაქმებელი</div>
-    <input onkeyup="UpdPos(${Number(n)})" class="LInpt2">
+    <div class="NameGrd">
+        <input onkeyup="UpdPos(${Number(n)});DamVal(${Number(n)})" class="LInpt2">
+        <img class="ErrImg2" src="images/Vector.png">
+        </div>
     <div class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 <div id="DateDiv">
         <div id="StartD">
             <div class="NameN">დაწყების რიცხვი</div>
-            <input onchange="UpdDate(${Number(n)})" class="DateInp1" type="date">
+            <input onchange="UpdDate(${Number(n)});DateVal1(${Number(n)})" class="DateInp1" type="date">
         </div>
 
         <div id="EndD">
             <div class="NameN">დამთავრების რიცხვი</div>
-            <input onchange="UpdDate(${Number(n)})" class="DateInp2" type="date">
+            <input onchange="UpdDate(${Number(n)});DateVal2(${Number(n)})" class="DateInp2" type="date">
         </div>
 </div>
 
 
 <div id="Descr">
     <div class="NameN">აღწერა</div>
-    <textarea onkeyup="UpdDescr(${Number(n)})" class="DescrText"></textarea>
+    <textarea onkeyup="UpdDescr(${Number(n)});DescrVal(${Number(n)})" class="DescrText"></textarea>
 </div>
 <div id="line2"></div>
    `;
 
-   document.getElementById("Exp_Edc").innerHTML+=`
+   document.getElementsByClassName("ClientExpDivs")[0].innerHTML+=`
    <div class="ClientExp">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
    <div class="ClientPosition"></div>
    <div class="ClientDates"></div>
    <div class="ClientDescr"></div>
+   <div class="line3"></div>
    `;
    
 };

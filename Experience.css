@@ -125,6 +125,7 @@ font-size: 16px;
 }
 #Damsaq{
 display: flex;
+align-items: flex-start;
 flex-direction: column;
 padding: 8px 24px;
 gap: 8px;
@@ -507,10 +508,17 @@ background: #FFFFFF;
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
+    margin-top: 26px;
     /* identical to box height */
 
     
     color: #F93B1D;
+}
+.line3{
+    width: 662px;
+    height: 0px;
+    border: 1px solid #C8C8C8;
+    margin-top: 32px;
 }
 .ClientDates{
     font-family: 'Helvetica Neue';
@@ -551,4 +559,18 @@ margin-top: 16px;
     display: grid;
     margin-top: 22px;
     margin-bottom: 12px;
+}
+.ErrImg1{
+    margin-left: 10px;
+    visibility: hidden;
+}
+.ErrImg2{
+    margin-left: 10px;
+    visibility: hidden;
+}
+
+.NameGrd{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
 }

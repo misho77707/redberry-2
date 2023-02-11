@@ -28,7 +28,7 @@
         <img src="images/phone.png">
         </div>
         <div id="ClientPhone">
-            +995 597 63 45 16
+            
         </div>
         <div id="ClientAbt">
             ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ
@@ -41,18 +41,20 @@
     
     <img id="star" src="/images/star.png" alt="">
     <div id="saxgvar">
-    <div class="Name">
+    <div class="Name1">
         <div class="NameN">სახელი</div>
-        <div>
-            <input onkeyup="UpdName()" type="text" id="NInp" class="NameInp">
+        <div class="NameGrd">
+            <input onkeyup="UpdName();NameVal('NInp',0)" type="text" id="NInp" class="NameInp">
+            <img class="ErrImg" src="images/Vector.png">
         </div>
         <div class="Vld">მინიმუმ 2 ასო, ქართული ასოები</div>
     </div>
 
-    <div class="Name">
+    <div class="Name2">
         <div class="NameN">გვარი</div>
-        <div>
-            <input onkeyup="UpdSName()" type="text" id="SNInp" class="NameInp">
+        <div class="NameGrd">
+            <input onkeyup="UpdSName();NameVal('SNInp',1)" type="text" id="SNInp" class="NameInp">
+            <img class="ErrImg" src="images/Vector.png">
         </div>
         <div class="Vld">მინიმუმ 2 ასო, ქართული ასოები</div>
     </div>
@@ -62,20 +64,29 @@
 <label id="FotoBtn" for="image_input"> ატვირთვა</label>
 <input  id="image_input" type="file" accept="image/jpeg, image/png, image/jpg" style="visibility: hidden;">
 <div id="About"><b>ჩემ შესახებ (არასავალდებულო)</b>
-<textarea onkeyup="UpdAbout()" id="AboutInp" type="text"></textarea>
+<textarea onkeyup="UpdAbout();AboutVal()" id="AboutInp" type="text"></textarea>
     </div>
     <div id="Email">
         <div class="NameN">ელ.ფოსტა</div>
-        <input onkeyup="UpdEmail()" id="EInpt">
+        <div class="NameGrd">
+        <input onkeyup="UpdEmail();EmailVal()" id="EInpt">
+        <img class="ErrImg" src="images/Vector.png">
+        </div>
         <div class="Vld">უნდა მთავრდებოდეს @redberry.ge-ით</div>
+        
     </div>
     <div id="Num">
         <div class="NameN">მობილურის ნომერი</div>
-        <input onkeyup="UpdPhone()" id="MInpt">
+        <div class="NameGrd">
+        <input onkeyup="UpdPhone();PhoneVal()" id="MInpt">
+        <img class="ErrImg" src="images/Vector.png">
+        </div>
         <div class="Vld">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</div>
+        
     </div>
-    <a href="Experience.html"><button id="NextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button></a>
+    <button onclick="Valall()" id="NextBtn">ᲨᲔᲛᲓᲔᲒᲘ</button>
 
     <script src="script.js"></script>
+    <script src="PersonalinfoVal.js"></script>
 </body>
 </html>

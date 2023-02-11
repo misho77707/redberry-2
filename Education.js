@@ -3,7 +3,7 @@ document.getElementById('ClientEmail').innerHTML=localStorage.getItem("Email");
 document.getElementById('ClientEmail').innerHTML=localStorage.getItem("Email");
 document.getElementById('ClientPhone').innerHTML=localStorage.getItem("Mobile");
 document.getElementById('ClientAbout').innerHTML=`<p>${localStorage.getItem("About")}</p>
-<div id='Cline'></div>`;
+<div class='line3'></div>`;
 document.getElementById("ClientPhoto").style.backgroundImage =localStorage.getItem("Photo");
 
 savedPos=JSON.parse(localStorage.getItem('PT'));
@@ -18,22 +18,43 @@ savedDue=JSON.parse(localStorage.getItem('DueT'))
 savedDescr=JSON.parse(localStorage.getItem('DescrT'))
 let k=0;
 
-// for(let i=0;i<savedPos.length-1;i++){
-//     document.getElementById("Exp_Edc").innerHTML+=`
-//    <div class=ClientExpDivs>
-//    <div class="ClientExp">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
-//    <div class="ClientPosition"></div>
-//    <div class="ClientDates"></div>
-//    <div class="ClientDescr"></div>
-//    <div class=Cline2></div>
-//    </div>
-//    `;
-// }
-// for(let i=0;i<savedPos.length;i++){
-//     document.getElementsByClassName('ClientPosition')[i].innerHTML=savedPos[i]+", "+savedDam[i];
-// document.getElementsByClassName('ClientDates')[i].innerHTML=savedS[i]+", "+savedE[i];
-// document.getElementsByClassName('ClientDescr')[i].innerHTML=savedD[i];
-// }
+maxS=Math.max(savedPos.length, savedDam.length, savedS.length, savedE.length, savedD.length);
+
+for(let i = 0; i < maxS; i++){
+    console.log(savedPos.length,maxS);
+    maxS=Math.max(savedPos.length, savedDam.length, savedS.length, savedE.length, savedD.length);
+    if((savedPos[i] == "" || savedPos[i] == null||savedPos[i] == undefined)
+    && (savedDam[i] == "" || savedDam[i] == null||savedDam[i] == undefined)
+    &&   (savedS[i] == "" || savedS[i] == null||savedS[i] == undefined)
+    &&   (savedE[i] == "" || savedE[i] == null||savedE[i] == undefined)
+    &&   (savedD[i] == "" || savedD[i] == null||savedD[i] == undefined)){
+        savedPos.splice(i,1);
+        savedDam.splice(i,1);
+        savedS.splice(i,1);
+        savedE.splice(i,1);
+        savedD.splice(i,1);
+        i--;
+    }
+     
+
+}
+
+
+maxS=Math.max(savedEdc.length, savedDeg.length, savedDue.length, savedDescr.length);
+for(let i = 0; i < maxS; i++){
+    console.log(maxS);
+    maxS=Math.max(savedEdc.length, savedDeg.length, savedDue.length, savedDescr.length);
+    if((savedEdc[i] == ""   ||    savedEdc[i] == null||savedEdc[i] == undefined)
+    && (savedDeg[i] == ""   ||    savedDeg[i] == null||savedDeg[i] == undefined)
+    && (savedDue[i] == ""   ||    savedDue[i] == null||savedDue[i] == undefined)
+    &&(savedDescr[i] == ""  ||    savedDescr[i] == null||savedDescr[i] == undefined)){
+        savedEdc.splice(i,1);
+        savedDeg.splice(i,1);
+        savedDue.splice(i,1);
+        savedDescr.splice(i,1);
+        i--;
+    }
+}
 
 for(let i=0;i<savedEdc.length-1;i++){More1(i+1);k+=1;}
 
@@ -108,34 +129,44 @@ function More(){
     document.getElementById("mainDiv").innerHTML+=`
     <div class="Edc">
     <div class="NameN">სასწავლებელი</div>
-    <input onkeyup="UpdSchool(${Number(k)})" class="LInpt1">
+    <div class='NameGrd'>
+    <input onkeyup="UpdSchool(${Number(k)});EdcVal(${Number(k)})" class="LInpt1">
+    <img class="ErrImg1" src="images/Vector.png">
+    </div>
     <div  class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 <div class="Degree_EndD">
 <div class="Degree">
     <div  class="NameN">ხარისხი</div>
-    <select onchange="UpdSchool1(${Number(k)})" class="Selector">
-        <option>Please select</option> 
+    <select onchange="UpdSchool1(${Number(k)});SelVal(${Number(k)})" class="Selector">
+        <option>აირჩიეთ ხარისხი</option> 
 
     </select>
     </div>
     <div class="EndD">
         <div class="NameN">დამთავრების რიცხვი</div>
-        <input class="DateInp" onchange="UpdDate(${Number(k)})" type="date">
+        <input class="DateInp" onchange="UpdDate(${Number(k)});DateVal(${Number(k)})" type="date">
     </div>
 </div>
 <div class="Descr">
     <div class="NameN">აღწერა</div>
-    <textarea onkeyup="UpdDescr(${Number(k)})" class="DescrText"></textarea>
+    <textarea onkeyup="UpdDescr(${Number(k)});DescrVal(${Number(k)})" class="DescrText"></textarea>
 </div>
 <div class="line2"></div>
    `;
-   document.getElementById("Exp_Edc").innerHTML+=`<div class="ClientEdcDiv">
+   document.getElementsByClassName("ClientEdcDiv")[0].innerHTML+=`
    <div class="ClientExp">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</div>
    <div class="ClientSchool"></div>
    <div class="ClientEDate"></div>
    <div class="ClientEDescr"></div>
-</div>`
+   <div class="line3"></div>`
+for(let j=0;j<document.getElementsByClassName('LInpt1').length-1;j++){
+    
+    if(EdcData[j]!=undefined)document.getElementsByClassName('LInpt1')[j].value=EdcData[j];
+    if(DueData[j]!=undefined)document.getElementsByClassName('DateInp')[j].value=DueData[j];
+    if(EdcDescData[j]!=undefined)document.getElementsByClassName('DescrText')[j].value=EdcDescData[j];
+    
+}
 
 document.getElementById('ClientRez').style.height=500+document.getElementById('Exp_Edc').offsetHeight+'px';
 
@@ -145,34 +176,38 @@ function More1(i){
     document.getElementById("mainDiv").innerHTML+=`
     <div class="Edc">
     <div class="NameN">სასწავლებელი</div>
-    <input onkeyup="UpdSchool(${i})" class="LInpt1">
+    <div class='NameGrd'>
+    <input onkeyup="UpdSchool(${i});EdcVal(${i})" class="LInpt1">
+    <img class="ErrImg1" src="images/Vector.png">
+    </div>
     <div  class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 <div class="Degree_EndD">
 <div class="Degree">
     <div  class="NameN">ხარისხი</div>
-    <select onchange="UpdSchool1(${i})" class="Selector">
-        <option>Please select</option> 
+    <select onchange="UpdSchool1(${i});SelVal(${i})" class="Selector">
+        <option>აირჩიეთ ხარისხი</option> 
 
     </select>
     </div>
     <div class="EndD">
         <div class="NameN">დამთავრების რიცხვი</div>
-        <input class="DateInp" onchange="UpdDate(${i})" type="date">
+        <input class="DateInp" onchange="UpdDate(${i});DateVal(${i})" type="date">
     </div>
 </div>
 <div class="Descr">
     <div class="NameN">აღწერა</div>
-    <textarea onkeyup="UpdDescr(${i})" class="DescrText"></textarea>
+    <textarea onkeyup="UpdDescr(${i});DescrVal(${i})" class="DescrText"></textarea>
 </div>
 <div class="line2"></div>
    `;
-   document.getElementById("Exp_Edc").innerHTML+=`<div class="ClientEdcDiv">
+   document.getElementsByClassName("ClientEdcDiv")[0].innerHTML+=`
    <div class="ClientExp">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</div>
    <div class="ClientSchool"></div>
    <div class="ClientEDate"></div>
    <div class="ClientEDescr"></div>
-</div>`
+   <div class="line3"></div>`
+
 
 document.getElementById('ClientRez').style.height=500+document.getElementById('Exp_Edc').offsetHeight+'px';
 
