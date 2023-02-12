@@ -3,6 +3,7 @@ function PosVal(num){
     if(inp.value.length<2){
         inp.style.borderColor='#EF5050';
         document.getElementsByClassName('ErrImg1')[num].style.visibility='visible';
+        document.getElementsByClassName('NameN1')[num].style.color="#E52F2F";
         inp.style.background=``;
         return false;
     }
@@ -12,6 +13,7 @@ function PosVal(num){
         inp.style.backgroundPosition='762px';
         inp.style.backgroundSize='18px';
         document.getElementsByClassName('ErrImg1')[num].style.visibility='hidden';
+        document.getElementsByClassName('NameN1')[num].style.color="#000000";
     }
 }
 function DamVal(num){
@@ -20,6 +22,7 @@ function DamVal(num){
         inp.style.borderColor='#EF5050';
         document.getElementsByClassName('ErrImg2')[num].style.visibility='visible';
         inp.style.background=``;
+        document.getElementsByClassName('NameN2')[num].style.color="#E52F2F";
         return false;
     }
     else{
@@ -28,15 +31,19 @@ function DamVal(num){
         inp.style.backgroundPosition='762px';
         inp.style.backgroundSize='18px';
         document.getElementsByClassName('ErrImg2')[num].style.visibility='hidden';
+        document.getElementsByClassName('NameN2')[num].style.color="#000000";
     }
 }
 function DateVal1(num){
     date=document.getElementsByClassName('DateInp1')[num];
     if(date.value){
         date.style.borderColor='#98E37E';
+        document.getElementsByClassName('NameN3')[num].style.color="#000000";
     }
     else{
+        
         date.style.borderColor='#EF5050';
+        document.getElementsByClassName('NameN3')[num].style.color="#E52F2F";
         return false;
     }
 
@@ -46,9 +53,11 @@ function DateVal2(num){
     date=document.getElementsByClassName('DateInp2')[num];
     if(date.value){
         date.style.borderColor='#98E37E';
+        document.getElementsByClassName('NameN4')[num].style.color="#000000";
     }
     else{
         date.style.borderColor='#EF5050';
+        document.getElementsByClassName('NameN4')[num].style.color="#E52F2F";
         return false;
     }
     
@@ -58,9 +67,11 @@ function DescrVal(num){
     descr=document.getElementsByClassName('DescrText')[num];
     if(descr.value){
         descr.style.borderColor='#98E37E';
+        document.getElementsByClassName('NameN5')[num].style.color="#000000";
     }
     else{
         descr.style.borderColor='#EF5050';
+        document.getElementsByClassName('NameN5')[num].style.color="#E52F2F";
         return false;
     }
 

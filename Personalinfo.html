@@ -44,7 +44,7 @@
     <div class="Name1">
         <div class="NameN">სახელი</div>
         <div class="NameGrd">
-            <input onkeyup="UpdName();NameVal('NInp',0)" type="text" id="NInp" class="NameInp">
+            <input placeholder="ანზორი" onkeyup="UpdName();NameVal('NInp',0)" type="text" id="NInp" class="NameInp">
             <img class="ErrImg" src="images/Vector.png">
         </div>
         <div class="Vld">მინიმუმ 2 ასო, ქართული ასოები</div>
@@ -53,23 +53,23 @@
     <div class="Name2">
         <div class="NameN">გვარი</div>
         <div class="NameGrd">
-            <input onkeyup="UpdSName();NameVal('SNInp',1)" type="text" id="SNInp" class="NameInp">
+            <input placeholder="მუმლაძე" onkeyup="UpdSName();NameVal('SNInp',1)" type="text" id="SNInp" class="NameInp">
             <img class="ErrImg" src="images/Vector.png">
         </div>
         <div class="Vld">მინიმუმ 2 ასო, ქართული ასოები</div>
     </div>
 </div>
-<div id="Foto"><b>პირადი ფოტოს ატვირთვა</b></div>
+<div id="Foto"><b id="poto">პირადი ფოტოს ატვირთვა</b></div>
 <!-- <button id="FotoBtn">ატვირთვა</button> -->
 <label id="FotoBtn" for="image_input"> ატვირთვა</label>
 <input  id="image_input" type="file" accept="image/jpeg, image/png, image/jpg" style="visibility: hidden;">
 <div id="About"><b>ჩემ შესახებ (არასავალდებულო)</b>
-<textarea onkeyup="UpdAbout();AboutVal()" id="AboutInp" type="text"></textarea>
+<textarea placeholder="ზოგადი ინფო შენ შესახებ" onkeyup="UpdAbout();AboutVal()" id="AboutInp" type="text"></textarea>
     </div>
     <div id="Email">
         <div class="NameN">ელ.ფოსტა</div>
         <div class="NameGrd">
-        <input onkeyup="UpdEmail();EmailVal()" id="EInpt">
+        <input placeholder="anzorr666@redberry.ge" onkeyup="UpdEmail();EmailVal()" id="EInpt">
         <img class="ErrImg" src="images/Vector.png">
         </div>
         <div class="Vld">უნდა მთავრდებოდეს @redberry.ge-ით</div>
@@ -78,7 +78,7 @@
     <div id="Num">
         <div class="NameN">მობილურის ნომერი</div>
         <div class="NameGrd">
-        <input onkeyup="UpdPhone();PhoneVal()" id="MInpt">
+        <input placeholder="+995 551 12 34 56" onkeypress="PhoneVal1()" onkeyup="UpdPhone();PhoneVal()" id="MInpt">
         <img class="ErrImg" src="images/Vector.png">
         </div>
         <div class="Vld">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</div>

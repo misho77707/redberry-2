@@ -40,8 +40,10 @@ for(let i = 0; i < maxS; i++){
 }
 
 
-maxS=Math.max(savedEdc.length, savedDeg.length, savedDue.length, savedDescr.length);
-for(let i = 0; i < maxS; i++){
+maxS=0;
+
+if(savedEdc&&savedDeg&&savedDue&&savedDescr)maxS=Math.max(savedEdc.length, savedDeg.length, savedDue.length, savedDescr.length);
+if(maxS>0)for(let i = 0; i < maxS; i++){
     console.log(maxS);
     maxS=Math.max(savedEdc.length, savedDeg.length, savedDue.length, savedDescr.length);
     if((savedEdc[i] == ""   ||    savedEdc[i] == null||savedEdc[i] == undefined)
@@ -55,8 +57,11 @@ for(let i = 0; i < maxS; i++){
         i--;
     }
 }
-
-for(let i=0;i<savedEdc.length-1;i++){More1(i+1);k+=1;}
+localStorage.setItem('EdcT',JSON.stringify(savedEdc));
+localStorage.setItem('DegT',JSON.stringify(savedDeg));
+localStorage.setItem('DueT',JSON.stringify(savedDue));
+localStorage.setItem('DescrT',JSON.stringify(savedDescr));
+if(savedEdc&&savedDeg&&savedDue&&savedDescr)for(let i=0;i<savedEdc.length-1;i++){More1(i+1);k+=1;}
 
 
 
@@ -65,8 +70,8 @@ let DegData=[];
 let DueData=[];
 let EdcDescData=[];
 
-
-for(let i=0;i<savedEdc.length;i++){
+console.log("AAAAAAAAAAAAAAAAAAAA",savedDescr)
+if(savedEdc&&savedDeg&&savedDue&&savedDescr)for(let i=0;i<savedEdc.length;i++){
     
 document.getElementsByClassName('LInpt1')[i].value=savedEdc[i];
 // document.getElementsByClassName('Selector')[i].value=savedDeg[i];
@@ -128,29 +133,29 @@ function More(){
     
     document.getElementById("mainDiv").innerHTML+=`
     <div class="Edc">
-    <div class="NameN">სასწავლებელი</div>
+    <div class="NameN1">სასწავლებელი</div>
     <div class='NameGrd'>
-    <input onkeyup="UpdSchool(${Number(k)});EdcVal(${Number(k)})" class="LInpt1">
+    <input placeholder="სასწავლებელი" onkeyup="UpdSchool(${Number(k)});EdcVal(${Number(k)})" class="LInpt1">
     <img class="ErrImg1" src="images/Vector.png">
     </div>
     <div  class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 <div class="Degree_EndD">
 <div class="Degree">
-    <div  class="NameN">ხარისხი</div>
+    <div  class="NameN2">ხარისხი</div>
     <select onchange="UpdSchool1(${Number(k)});SelVal(${Number(k)})" class="Selector">
         <option>აირჩიეთ ხარისხი</option> 
 
     </select>
     </div>
     <div class="EndD">
-        <div class="NameN">დამთავრების რიცხვი</div>
+        <div class="NameN3">დამთავრების რიცხვი</div>
         <input class="DateInp" onchange="UpdDate(${Number(k)});DateVal(${Number(k)})" type="date">
     </div>
 </div>
 <div class="Descr">
-    <div class="NameN">აღწერა</div>
-    <textarea onkeyup="UpdDescr(${Number(k)});DescrVal(${Number(k)})" class="DescrText"></textarea>
+    <div class="NameN4">აღწერა</div>
+    <textarea placeholder="განათლების აღწერა" onkeyup="UpdDescr(${Number(k)});DescrVal(${Number(k)})" class="DescrText"></textarea>
 </div>
 <div class="line2"></div>
    `;
@@ -175,29 +180,29 @@ function More1(i){
     
     document.getElementById("mainDiv").innerHTML+=`
     <div class="Edc">
-    <div class="NameN">სასწავლებელი</div>
+    <div class="NameN1">სასწავლებელი</div>
     <div class='NameGrd'>
-    <input onkeyup="UpdSchool(${i});EdcVal(${i})" class="LInpt1">
+    <input placeholder="სასწავლებელი" onkeyup="UpdSchool(${i});EdcVal(${i})" class="LInpt1">
     <img class="ErrImg1" src="images/Vector.png">
     </div>
     <div  class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 <div class="Degree_EndD">
 <div class="Degree">
-    <div  class="NameN">ხარისხი</div>
+    <div  class="NameN2">ხარისხი</div>
     <select onchange="UpdSchool1(${i});SelVal(${i})" class="Selector">
         <option>აირჩიეთ ხარისხი</option> 
 
     </select>
     </div>
     <div class="EndD">
-        <div class="NameN">დამთავრების რიცხვი</div>
+        <div class="NameN3">დამთავრების რიცხვი</div>
         <input class="DateInp" onchange="UpdDate(${i});DateVal(${i})" type="date">
     </div>
 </div>
 <div class="Descr">
-    <div class="NameN">აღწერა</div>
-    <textarea onkeyup="UpdDescr(${i});DescrVal(${i})" class="DescrText"></textarea>
+    <div class="NameN4">აღწერა</div>
+    <textarea placeholder="განათლების აღწერა" onkeyup="UpdDescr(${i});DescrVal(${i})" class="DescrText"></textarea>
 </div>
 <div class="line2"></div>
    `;
@@ -212,7 +217,7 @@ function More1(i){
 document.getElementById('ClientRez').style.height=500+document.getElementById('Exp_Edc').offsetHeight+'px';
 
 }
-for(let i=0;i<2;i++){
+if(savedDue&&savedDescr)for(let i=0;i<savedDue.length;i++){
     UpdDate(i);
 UpdDescr(i);
 }

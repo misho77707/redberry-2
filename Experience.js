@@ -28,10 +28,10 @@ savedS=JSON.parse(localStorage.getItem('ST'));
 savedE=JSON.parse(localStorage.getItem('ET'));
 savedD=JSON.parse(localStorage.getItem('DeT'));
 
+maxS=0;
+if(savedPos&&savedDam&&savedS&&savedE&&savedD)maxS=Math.max(savedPos.length, savedDam.length, savedS.length, savedE.length, savedD.length);
 
-maxS=Math.max(savedPos.length, savedDam.length, savedS.length, savedE.length, savedD.length);
-
-for(let i = 0; i <maxS; i++){
+if(maxS>0)for(let i = 0; i <maxS; i++){
     console.log(savedPos.length,maxS);
     maxS=Math.max(savedPos.length, savedDam.length, savedS.length, savedE.length, savedD.length);
     if((savedPos[i] == "" || savedPos[i] == null||savedPos[i] == undefined)
@@ -61,7 +61,7 @@ localStorage.setItem('DeT',JSON.stringify(savedD));
 for(let i=0;i<maxS-1;i++){More1(i+1);k+=1;}
 
 
-for(let i=0;i<savedPos.length;i++){
+if(savedPos&&savedDam&&savedS&&savedE&&savedD)for(let i=0;i<savedPos.length;i++){
 
 
 document.getElementsByClassName('LInpt1')[i].value=savedPos[i];
@@ -96,7 +96,7 @@ function UpdPos(idx){
     localStorage.setItem('DT',JSON.stringify(Damdata));
     document.getElementsByClassName('ClientPosition')[idx].innerHTML=a+", "+b;
 
-    UpdExperience(idx);
+    
     
 }
 
@@ -109,7 +109,7 @@ function UpdDate(idx){
     localStorage.setItem('ST',JSON.stringify(Sdata));
     localStorage.setItem('ET',JSON.stringify(Edata));
     document.getElementsByClassName('ClientDates')[idx].innerHTML=a+' - '+b;
-    UpdExperience(idx)
+   
 }
 
 function UpdDescr(idx){
@@ -117,47 +117,46 @@ function UpdDescr(idx){
     document.getElementsByClassName('ClientDescr')[idx].innerHTML=document.getElementsByClassName('DescrText')[idx].value;
     localStorage.setItem('DeT',JSON.stringify(Descrdata));
     document.getElementById('ClientRez').style.height=500+document.getElementById('Exp_Edc').offsetHeight+'px';
-    UpdExperience(idx);
+    
 }
-
 
 function More(){
     k+=1;
     
     document.getElementById("mainDiv").innerHTML+=`
     <div id="Position">
-    <div class="NameN">თანამდებობა</div>
+    <div class="NameN1">თანამდებობა</div>
     <div class="NameGrd">
-        <input onkeyup="UpdPos(${k});PosVal(${k})" class="LInpt1">
+        <input placeholder="თანამდებობა" onkeyup="UpdPos(${k});PosVal(${k})" class="LInpt1">
         <img class="ErrImg1" src="images/Vector.png">
         </div>
     <div class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 
 <div id="Damsaq">
-    <div class="NameN">დამსაქმებელი</div>
+    <div class="NameN2">დამსაქმებელი</div>
     <div class="NameGrd">
-            <input onkeyup="UpdPos(${k});DamVal(${k})" class="LInpt2">
+            <input placeholder="დამსაქმებელი" onkeyup="UpdPos(${k});DamVal(${k})" class="LInpt2">
             <img class="ErrImg2" src="images/Vector.png">
         </div>
     <div class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 <div id="DateDiv">
         <div id="StartD">
-            <div class="NameN">დაწყების რიცხვი</div>
+            <div class="NameN3">დაწყების რიცხვი</div>
             <input onchange="UpdDate(${k});DateVal1(${k})" class="DateInp1" type="date">
         </div>
 
         <div id="EndD">
-            <div class="NameN">დამთავრების რიცხვი</div>
+            <div class="NameN4">დამთავრების რიცხვი</div>
             <input onchange="UpdDate(${k});DateVal2(${k})" class="DateInp2" type="date">
         </div>
 </div>
 
 
 <div id="Descr">
-    <div class="NameN">აღწერა</div>
-    <textarea onkeyup="UpdDescr(${k})" class="DescrText"></textarea>
+    <div class="NameN5">აღწერა</div>
+    <textarea placeholder="დამსაქმებელი" onkeyup="UpdDescr(${k})" class="DescrText"></textarea>
 </div>
 <div id="line2"></div>
    `;
@@ -170,7 +169,7 @@ function More(){
    <div class="line3"></div>
    `;
    console.log(document.getElementsByClassName('LInpt1').length);
-   for(let j=0;j<document.getElementsByClassName('LInpt1').length-1;j++){
+   if(Posdata&&Damdata&&savedS&&savedE&&savedD)for(let j=0;j<document.getElementsByClassName('LInpt1').length-1;j++){
     
     if(Posdata[j]!=undefined)document.getElementsByClassName('LInpt1')[j].value=Posdata[j];
     if(Damdata[j]!=undefined)document.getElementsByClassName('LInpt2')[j].value=Damdata[j];
@@ -186,9 +185,9 @@ function More1(n){
     
     document.getElementById("mainDiv").innerHTML+=`
     <div id="Position">
-    <div class="NameN">თანამდებობა</div>
+    <div class="NameN1">თანამდებობა</div>
     <div class="NameGrd">
-        <input onkeyup="UpdPos(${Number(n)});PosVal(${Number(n)})" class="LInpt1">
+        <input placeholder="თანამდებობა" onkeyup="UpdPos(${Number(n)});PosVal(${Number(n)})" class="LInpt1">
         <img class="ErrImg1" src="images/Vector.png">
         </div>
     
@@ -196,29 +195,29 @@ function More1(n){
 </div>
 
 <div id="Damsaq">
-    <div class="NameN">დამსაქმებელი</div>
+    <div class="NameN2">დამსაქმებელი</div>
     <div class="NameGrd">
-        <input onkeyup="UpdPos(${Number(n)});DamVal(${Number(n)})" class="LInpt2">
+        <input placeholder="დამსაქმებელი" onkeyup="UpdPos(${Number(n)});DamVal(${Number(n)})" class="LInpt2">
         <img class="ErrImg2" src="images/Vector.png">
         </div>
     <div class="Vld">მინიმუმ 2 სიმბოლო</div>
 </div>
 <div id="DateDiv">
         <div id="StartD">
-            <div class="NameN">დაწყების რიცხვი</div>
+            <div class="NameN3">დაწყების რიცხვი</div>
             <input onchange="UpdDate(${Number(n)});DateVal1(${Number(n)})" class="DateInp1" type="date">
         </div>
 
         <div id="EndD">
-            <div class="NameN">დამთავრების რიცხვი</div>
+            <div class="NameN4">დამთავრების რიცხვი</div>
             <input onchange="UpdDate(${Number(n)});DateVal2(${Number(n)})" class="DateInp2" type="date">
         </div>
 </div>
 
 
 <div id="Descr">
-    <div class="NameN">აღწერა</div>
-    <textarea onkeyup="UpdDescr(${Number(n)});DescrVal(${Number(n)})" class="DescrText"></textarea>
+    <div class="NameN5">აღწერა</div>
+    <textarea placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" onkeyup="UpdDescr(${Number(n)});DescrVal(${Number(n)})" class="DescrText"></textarea>
 </div>
 <div id="line2"></div>
    `;
@@ -233,19 +232,7 @@ function More1(n){
    
 };
 
-function UpdExperience(idx){
-    obj={
-    "position": Posdata[idx],
-    "employer": Damdata[idx],
-    "start_date": Sdata[idx],
-    "due_date": Edata[idx],
-    "description": Descrdata[idx]
-};
-    experiences[idx]=obj;
-    console.log(JSON.parse(localStorage.getItem('experiences'))[idx]);
-    localStorage.setItem("experiences",JSON.stringify(experiences));
 
-}
 
 document.getElementById('ClientRez').style.height=500+document.getElementById('Exp_Edc').offsetHeight+'px';
 document.getElementById('Exp_Edc').innerHTML+=`<img id="star" src="/images/star.png" alt="">`

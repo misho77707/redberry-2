@@ -122,7 +122,7 @@ height: 40px;
 left: 48px;
 top: 45px;
 border-radius: 20px;
-
+cursor: pointer;
 background: #FFFFFF;
 }
 #HomeBtn img{
@@ -160,7 +160,7 @@ font-weight: 400;
 font-size: 16px;
 
 }
-.NameN{
+.NameN1,.NameN2,.NameN3,.NameN4{
    
     font-family: 'Helvetica Neue';
     font-style: normal;

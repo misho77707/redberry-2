@@ -31,6 +31,7 @@
             ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ
         </div>
         <div id="ClientAbout">
+            
         </div>
         <div id="Exp_Edc">
             <div class=ClientExpDivs>
@@ -61,29 +62,29 @@
 
     <div id="mainDiv">
     <div class="Edc">
-        <div class="NameN">სასწავლებელი</div>
+        <div class="NameN1">სასწავლებელი</div>
             <div class="NameGrd">
-            <input onkeyup="UpdSchool(0);EdcVal(0)" class="LInpt1">
+            <input placeholder="სასწავლებელი" onkeyup="UpdSchool(0);EdcVal(0)" class="LInpt1">
             <img class="ErrImg1" src="images/Vector.png">
             </div>
         <div  class="Vld">მინიმუმ 2 სიმბოლო</div>
     </div>
     <div class="Degree_EndD">
     <div class="Degree">
-        <div  class="NameN">ხარისხი</div>
-        <select aria-placeholder="აირჩიეთ ხარისხი" onchange="UpdSchool1(0);SelVal(0)" class="Selector">
+        <div class="NameN2">ხარისხი</div>
+        <select  onchange="UpdSchool1(0);SelVal(0)" class="Selector">
             <option>აირჩიეთ ხარისხი</option> 
 
         </select>
         </div>
         <div class="EndD">
-            <div class="NameN">დამთავრების რიცხვი</div>
+            <div class="NameN3">დამთავრების რიცხვი</div>
             <input class="DateInp" onchange="UpdDate(0);DateVal(0)" type="date">
         </div>
     </div>
     <div class="Descr">
-        <div class="NameN">აღწერა</div>
-        <textarea onkeyup="UpdDescr(0);DescrVal(0)" class="DescrText"></textarea>
+        <div class="NameN4">აღწერა</div>
+        <textarea placeholder="განათლების აღწერა" onkeyup="UpdDescr(0);DescrVal(0)" class="DescrText"></textarea>
     </div>
     <div class="line2"></div>
 
@@ -95,7 +96,7 @@
     
                     <button  onclick="More();ragac()" id="MoreBtn">სხვა სასწავლებლის დამატება</button>
                     <a href="/Experience.html"><button id="BackBtn">ᲣᲙᲐᲜ</button></a>
-                    <button onclick="SelVal(0)" id="NextBtn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button>
+                    <button onclick="ValAll()" id="NextBtn">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button>
                 </div>
             </div>
 
@@ -118,7 +119,7 @@ var data = await response.json();
 
         if(localStorage.getItem('DegT')){   
         savedDeg=JSON.parse(localStorage.getItem('DegT'))
-        for(let j=0;j<savedDeg.length;j++){
+        if(savedDeg)for(let j=0;j<savedDeg.length;j++){
             const a=document.getElementsByClassName('LInpt1')[j].value;
             
 

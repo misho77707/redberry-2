@@ -1,0 +1,254 @@
+body{
+    background: #F9F9F9;
+}
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url(fonts/HelveticaNeue-01.ttf);
+}
+.line3{
+    width: 662px;
+    height: 0px;
+    border: 1px solid #C8C8C8;
+    margin-top: 32px;
+}
+.line4{
+    width: 662px;
+    height: 0px;
+    border: 1px solid #C8C8C8;
+    margin-top: 32px;
+}
+.line3:last-child{
+    visibility: hidden;
+}
+#ClientRez{
+    
+    
+    position: absolute;
+    width: 822px;
+    
+    height:100%;
+    left: calc(50% - 822px/2);
+    top: 54px;
+    background: #FFFFFF;
+    border: 0.8px solid #000000;
+    
+    
+}
+#ClientName{
+    position: absolute;
+width: 400px;
+height: 42px;
+left: 80px;
+top: 68px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 34px;
+line-height: 42px;
+/* identical to box height */
+
+
+color: #F93B1D;
+}
+#ClientPhoto{
+    position: absolute;
+width: 246px;
+height: 246px;
+left: 501px;
+top: 48px;
+
+background: url(.jpg), #D9D9D9;
+border-radius: 133px;
+background-size: cover;
+}
+#ClientEmail{
+    position: absolute;
+width: 179px;
+height: 21px;
+left: 111px;
+top: 130px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+
+/* off black */
+
+color: #1A1A1A;
+}
+#ClientPhone{
+    position: absolute;
+width: 151px;
+height: 21px;
+left: 111px;
+top: 158px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+
+/* off black */
+
+color: #1A1A1A;
+}
+#ClientAbt{
+    position: absolute;
+width: 118px;
+height: 22px;
+left: 80px;
+top: 213px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #F93B1D;
+}
+#ClientAbout{
+    position: absolute;
+width: 432px;
+height: 72px;
+left: 80px;
+top: 250px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+/* or 138% */
+
+text-transform: lowercase;
+
+color: #000000;
+}
+#ClientAbout p{
+    word-wrap: break-word;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+#Cline{
+    opacity: 1;
+    position: absolute;
+width: 662px;
+height: 0px;
+border: 1px solid #C8C8C8;
+}
+#At_img{
+    position: absolute;
+    left: 80px;
+    top:130px;
+}
+#At_img img{
+    height: 16.666664123535156px;
+width: 16.666664123535156px;
+left: 1.66668701171875px;
+top: 1.666748046875px;
+border-radius: 0px;
+
+}
+#Phone_img{
+ position: absolute;
+ top: 158px;
+ left:80px;
+}
+#Phone_img img{
+    height: 16.641902923583984px;
+width: 16.63849449157715px;
+left: 1.55352783203125px;
+top: 1.8046875px;
+border-radius: 0px;
+
+}
+.ClientExp{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 26px;
+    /* identical to box height */
+
+    
+    color: #F93B1D;
+}
+.ClientEdcDiv{
+    left: 80px;
+    width: 662px;
+    position: relative;
+    margin-top: 400px;
+}
+#star{
+    position: relative;
+    left: 78px;
+    width: 42px;
+    height: 42px;
+   
+    
+}
+#EvGrid{
+    display: grid;
+    grid-template-columns: auto;
+}
+.ClientPosition, .ClientSchool{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1A1A1A;
+    margin-top: 15px;
+}
+.ClientDates, .ClientEDate{
+    font-family: 'Helvetica Neue';
+font-style: italic;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+margin-top: 7px;
+color: #919191;
+}
+.ClientDescr, .ClientEDescr{
+    font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 22px;
+margin-top: 30px;
+/* or 138% */
+
+text-transform: capitalize;
+word-break:break-all;
+color: #000000;
+margin-top: 16px;
+}
+#HomeBtn{
+    position: absolute;
+width: 40px;
+height: 40px;
+left: 48px;
+top: 45px;
+border-radius: 20px;
+cursor: pointer;
+background: #FFFFFF;
+}
+#HomeBtn img{
+    position: absolute;
+    height: 16px;
+    width: 9.17px;
+    left: 14px;
+    top:12px;
+    cursor: pointer;
+}
