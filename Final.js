@@ -36,25 +36,69 @@ for(let i=0;i<position.length;i++){
     experiences.push(obj);
 }
     
-
+de=["საშუალო სკოლის დიპლომი","ზოგადსაგანმანათლებლო დიპლომი","ბაკალავრი","მაგისტრი","დოქტორი","ასოცირებული ხარისხი","სტუდენტი",'კოლეჯი(ხარისიხს გარეშე)','სხვა'];
+degree_id=[];
 institute=JSON.parse(localStorage.getItem('EdcT'))
 degree=JSON.parse(localStorage.getItem('DegT'))
+j=0;
+for(let i=0;i<degree.length;i++){
+    while(degree[i]!=de[j]){
+        j++;
+    }
+    degree_id[i]=j;
+    j=0;
+}
+
 due_date2=JSON.parse(localStorage.getItem('DueT'))
 description2=JSON.parse(localStorage.getItem('DescrT'))
 
 for(let i=0;i<institute.length;i++){
     let obj={
         "institute": institute[i],
-        "degree": degree[i],
+        "degree_id": degree_id[i],
         "due_date": due_date2[i],
         "description":description2[i]
     }
     educations.push(obj);
 }
-image=localStorage.getItem('Photo');
-about_me=localStorage.getItem('About')
+image=String(localStorage.getItem('Photo'));
 
-console.log(experiences);
+image=image.slice()
+//27
+console.log(image)
+image=image.substring(0,image.length-1);
+// image=image.blob();
+image = image.replace("\\", "/");
+imgT='image.jpeg'
+// console.log(base64toBlob(image,imgT));
+image=`https://resume.redberryinternship.ge/`+image;
+about_me=localStorage.getItem('About');
+// const b64toBlob = (b64Data, contentType='',sliceSize=200000) => {
+//     const byteCharacters = atob(b64Data);
+//     const byteArrays = [];
+  
+//     for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+//       const slice = byteCharacters.slice(offset, offset + sliceSize);
+  
+//       const byteNumbers = new Array(slice.length);
+//       for (let i = 0; i < slice.length; i++) {
+//         byteNumbers[i] = slice.charCodeAt(i);
+//       }
+  
+//       const byteArray = new Uint8Array(byteNumbers);
+//       byteArrays.push(byteArray);
+//     }
+  
+//     const blob = new Blob(byteArrays, {type: contentType});
+//     a=byteArrays;
+//     return blob;
+//   }
+//   const blob = b64toBlob(image, imgT);
+  
+//  const blobUrl = URL.createObjectURL(blob);
+// console.log(blob)
+
+
 obj={
     "name": Name,
     "surname": surname,
@@ -62,17 +106,29 @@ obj={
     "phone_number": phone_number,
     "experiences": experiences,
     "educations": educations,
-    "image": image,
+    "image": a,
     "about_me": about_me
   }
-  console.log(obj);
-  fetch('https://resume.redberryinternship.ge/api/cvs', {
-    method: 'POST',
-    body: JSON.stringify({obj})
-})
-    .then(response => {
-        console.log(response)
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+
+
+  var form_data = new FormData();
+
+  for ( var key in obj ) {
+      form_data.append("rame", "rameshi");
+      console.log(key, obj[key])
+  }
+  form_data=obj;
+  console.log(typeof(form_data))
+  
+
+    async function Send(){
+   await axios.post(`https://resume.redberryinternship.ge/api/cvs`,
+    form_data
+    )
+            .then(function(response){
+                console.log(response.data)
+            })
+            .catch(function(error){
+                console.log(error)
+            })}
+            Send();

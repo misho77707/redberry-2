@@ -169,7 +169,7 @@ function More(){
    <div class="line3"></div>
    `;
    console.log(document.getElementsByClassName('LInpt1').length);
-   if(Posdata&&Damdata&&savedS&&savedE&&savedD)for(let j=0;j<document.getElementsByClassName('LInpt1').length-1;j++){
+   if(Posdata&&Damdata&&Sdata&&Edata&&Descrdata)for(let j=0;j<document.getElementsByClassName('LInpt1').length-1;j++){
     
     if(Posdata[j]!=undefined)document.getElementsByClassName('LInpt1')[j].value=Posdata[j];
     if(Damdata[j]!=undefined)document.getElementsByClassName('LInpt2')[j].value=Damdata[j];
