@@ -8,7 +8,7 @@ document.getElementById("ClientPhoto").style.backgroundImage =localStorage.getIt
 
 function EraseAll(){
     localStorage.clear();
-    location.href="index.html";
+    location.href="/index.html";
 }
 Name=localStorage.getItem('Name');
 surname=localStorage.getItem('SurName');
@@ -73,30 +73,6 @@ imgT='image.jpeg'
 // console.log(base64toBlob(image,imgT));
 image=`https://resume.redberryinternship.ge/`+image;
 about_me=localStorage.getItem('About');
-// const b64toBlob = (b64Data, contentType='',sliceSize=200000) => {
-//     const byteCharacters = atob(b64Data);
-//     const byteArrays = [];
-  
-//     for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-//       const slice = byteCharacters.slice(offset, offset + sliceSize);
-  
-//       const byteNumbers = new Array(slice.length);
-//       for (let i = 0; i < slice.length; i++) {
-//         byteNumbers[i] = slice.charCodeAt(i);
-//       }
-  
-//       const byteArray = new Uint8Array(byteNumbers);
-//       byteArrays.push(byteArray);
-//     }
-  
-//     const blob = new Blob(byteArrays, {type: contentType});
-//     a=byteArrays;
-//     return blob;
-//   }
-//   const blob = b64toBlob(image, imgT);
-  
-//  const blobUrl = URL.createObjectURL(blob);
-// console.log(blob)
 
 
 obj={

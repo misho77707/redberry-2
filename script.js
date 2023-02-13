@@ -3,6 +3,10 @@ function UpdName(){
     document.getElementById('ClientName').innerHTML=document.getElementById('NInp').value+" "+document.getElementById('SNInp').value;
     localStorage.setItem("Name",document.getElementById('NInp').value)
 }
+function EraseAll(){
+    localStorage.clear();
+    location.href="/index.html";
+}
 function UpdSName(){
     document.getElementById('ClientName').innerHTML=document.getElementById('NInp').value+" "+document.getElementById('SNInp').value;
     localStorage.setItem("SurName",document.getElementById('SNInp').value)

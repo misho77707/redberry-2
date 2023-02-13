@@ -5,7 +5,10 @@ document.getElementById('ClientPhone').innerHTML=localStorage.getItem("Mobile");
 document.getElementById('ClientAbout').innerHTML=`<p>${localStorage.getItem("About")}</p>
 <div class='line3'></div>`;
 document.getElementById("ClientPhoto").style.backgroundImage =localStorage.getItem("Photo")
-
+function EraseAll(){
+    localStorage.clear();
+    location.href="/index.html";
+}
 
 let Posdata=[];
 let Damdata=[];

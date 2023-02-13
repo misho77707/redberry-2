@@ -17,7 +17,10 @@ savedDeg=JSON.parse(localStorage.getItem('DegT'))
 savedDue=JSON.parse(localStorage.getItem('DueT'))
 savedDescr=JSON.parse(localStorage.getItem('DescrT'))
 let k=0;
-
+function EraseAll(){
+    localStorage.clear();
+    location.href="/index.html";
+}
 maxS=Math.max(savedPos.length, savedDam.length, savedS.length, savedE.length, savedD.length);
 
 for(let i = 0; i < maxS; i++){
